@@ -2760,12 +2760,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'page-landing',
   route: [{
     path: '/',
     name: 'welcome'
-  }]
+  }],
+  data: function data() {
+    return {
+      nip: null
+    };
+  },
+  methods: {
+    openForm: function openForm() {
+      this.$router.push({
+        name: 'quest-form',
+        params: {
+          nip: this.nip
+        }
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2964,6 +2980,127 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.fetchAppInfos();
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['initStore', 'snackbarClose', 'fetchAppInfos', 'signin']))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/frontend/Questions/index.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/apps/pages/frontend/Questions/index.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'page-questions',
+  route: [{
+    path: '/form/:nip',
+    name: 'quest-form'
+  }],
+  data: function data() {
+    return {
+      step: 1
+    };
+  }
 });
 
 /***/ }),
@@ -27836,6 +27973,7 @@ var render = function() {
           _c(
             "v-card",
             {
+              staticClass: "deep-purple lighten-5",
               staticStyle: { "min-height": "calc(100vh - 52px)" },
               attrs: { flat: "" }
             },
@@ -27867,7 +28005,7 @@ var render = function() {
                     { attrs: { flat: "" } },
                     [
                       _c("v-toolbar-title", [
-                        _vm._v("IKP - ASN Kabupaten Tangerang")
+                        _vm._v("IKP-ASN Kabupaten Tangerang")
                       ])
                     ],
                     1
@@ -27883,7 +28021,7 @@ var render = function() {
                         staticClass: "mx-auto my-10",
                         attrs: {
                           src: "/images/logo-kabtang.png",
-                          "max-width": "200"
+                          "max-width": "180"
                         }
                       }),
                       _vm._v(" "),
@@ -27898,6 +28036,13 @@ var render = function() {
                                 attrs: {
                                   color: "deep-purple",
                                   label: "Nomor Induk Pegawai"
+                                },
+                                model: {
+                                  value: _vm.nip,
+                                  callback: function($$v) {
+                                    _vm.nip = $$v
+                                  },
+                                  expression: "nip"
                                 }
                               })
                             ],
@@ -27950,7 +28095,10 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-btn",
-                        { attrs: { color: "deep-purple", text: "" } },
+                        {
+                          attrs: { color: "deep-purple", text: "" },
+                          on: { click: _vm.openForm }
+                        },
                         [_vm._v("selanjutnya")]
                       )
                     ],
@@ -27968,6 +28116,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-footer",
+        { staticClass: "deep-purple lighten-4" },
         [
           _c(
             "v-col",
@@ -28462,6 +28611,273 @@ var render = function() {
       )
     ],
     2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/frontend/Questions/index.vue?vue&type=template&id=0ba156da&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/apps/pages/frontend/Questions/index.vue?vue&type=template&id=0ba156da& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-app",
+    {},
+    [
+      _c(
+        "v-content",
+        { staticClass: "deep-purple lighten-5" },
+        [
+          _c(
+            "v-card",
+            {
+              staticClass: "transparent pb-10",
+              staticStyle: { "min-height": "calc(100vh - 52px)" },
+              attrs: { flat: "" }
+            },
+            [
+              _c(
+                "v-toolbar",
+                {
+                  attrs: {
+                    color: "deep-purple",
+                    dark: "",
+                    extended: "",
+                    flat: ""
+                  }
+                },
+                [_c("v-app-bar-nav-icon")],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                {
+                  staticClass: "mx-auto",
+                  staticStyle: { "margin-top": "-64px" },
+                  attrs: { "max-width": "700" }
+                },
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { flat: "" } },
+                    [
+                      _c("v-toolbar-title", [
+                        _vm._v("IKP-ASN Kabupaten Tangerang")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-window",
+                        {
+                          model: {
+                            value: _vm.step,
+                            callback: function($$v) {
+                              _vm.step = $$v
+                            },
+                            expression: "step"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-window-item",
+                            { attrs: { value: 1 } },
+                            [
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Nama Lengkap" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "6" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Pangkat" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "6" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Level Jabatan" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Jabatan" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "6" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Masa Jabatan" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "6" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Unit Kerja" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          label: "Organisasi Perangkat Daerah"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "4" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Jenis Kelamin" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "4" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Usia" }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "4" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Pendidikan Terakhir" }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "deep-purple", text: "" },
+                          on: { click: function($event) {} }
+                        },
+                        [_vm._v("selanjutnya")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-footer",
+        { staticClass: "deep-purple lighten-4" },
+        [
+          _c(
+            "v-col",
+            { staticClass: "text-center overline", attrs: { cols: "12" } },
+            [
+              _c("span", [
+                _vm._v(
+                  "BADAN PENGEMBANGAN SUMBER DAYA MANUSIA DAERAH - KABUPATEN TANGERANG © 2019"
+                )
+              ])
+            ]
+          )
+        ],
+        1
+      )
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -32282,11 +32698,80 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/apps/pages/frontend/Questions/index.vue":
+/*!***********************************************************!*\
+  !*** ./resources/apps/pages/frontend/Questions/index.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_vue_vue_type_template_id_0ba156da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=0ba156da& */ "./resources/apps/pages/frontend/Questions/index.vue?vue&type=template&id=0ba156da&");
+/* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/apps/pages/frontend/Questions/index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _index_vue_vue_type_template_id_0ba156da___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _index_vue_vue_type_template_id_0ba156da___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/apps/pages/frontend/Questions/index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/apps/pages/frontend/Questions/index.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/apps/pages/frontend/Questions/index.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/frontend/Questions/index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/apps/pages/frontend/Questions/index.vue?vue&type=template&id=0ba156da&":
+/*!******************************************************************************************!*\
+  !*** ./resources/apps/pages/frontend/Questions/index.vue?vue&type=template&id=0ba156da& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0ba156da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index.vue?vue&type=template&id=0ba156da& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/frontend/Questions/index.vue?vue&type=template&id=0ba156da&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0ba156da___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0ba156da___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/apps/pages/frontend/index.js":
 /*!************************************************!*\
   !*** ./resources/apps/pages/frontend/index.js ***!
   \************************************************/
-/*! exports provided: Landing, Login */
+/*! exports provided: Landing, Questions, Login */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32294,8 +32779,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Landing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Landing */ "./resources/apps/pages/frontend/Landing/index.vue");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Landing", function() { return _Landing__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login */ "./resources/apps/pages/frontend/Login/index.vue");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return _Login__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+/* harmony import */ var _Questions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Questions */ "./resources/apps/pages/frontend/Questions/index.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Questions", function() { return _Questions__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Login */ "./resources/apps/pages/frontend/Login/index.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return _Login__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
 
 
 

@@ -1,23 +1,24 @@
 <template>
     <v-app v-cloak>
         <v-content>
-            <v-card flat style="min-height: calc(100vh - 52px);">
+            <v-card class="deep-purple lighten-5" flat style="min-height: calc(100vh - 52px);">
                 <v-toolbar color="deep-purple" dark extended flat>
                     <v-app-bar-nav-icon></v-app-bar-nav-icon>
                 </v-toolbar>
 
                 <v-card class="mx-auto" max-width="700" style="margin-top: -64px;">
                     <v-toolbar flat>
-                        <v-toolbar-title>IKP - ASN Kabupaten Tangerang</v-toolbar-title>
+                        <v-toolbar-title>IKP-ASN Kabupaten Tangerang</v-toolbar-title>
                     </v-toolbar>
                     <v-divider></v-divider>
                     <v-card-text class="subtitle-2">
-                        <v-img class="mx-auto my-10" src="/images/logo-kabtang.png" max-width="200"></v-img>
+                        <v-img class="mx-auto my-10" src="/images/logo-kabtang.png" max-width="180"></v-img>
                         <v-row>
                             <v-col cols="12">
                                 <v-text-field
                                     color="deep-purple"
                                     label="Nomor Induk Pegawai"
+                                    v-model="nip"
                                 ></v-text-field>
                             </v-col>
                         </v-row>
@@ -32,13 +33,13 @@
 
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="deep-purple" text>selanjutnya</v-btn>
+                        <v-btn color="deep-purple" text @click="openForm">selanjutnya</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-card>
         </v-content>
 
-        <v-footer>
+        <v-footer class="deep-purple lighten-4">
             <v-col class="text-center overline" cols="12">
                 <span>BADAN PENGEMBANGAN SUMBER DAYA MANUSIA DAERAH - KABUPATEN TANGERANG &copy; 2019</span>
             </v-col>
@@ -52,6 +53,16 @@ export default {
 
     route: [
         { path: '/', name: 'welcome' }
-    ]
+    ],
+
+    data:() => ({
+        nip: null
+    }),
+
+    methods: {
+        openForm: function() {
+            this.$router.push({ name: 'quest-form', params: { nip: this.nip } });
+        }
+    }
 }
 </script>
