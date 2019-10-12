@@ -19,6 +19,7 @@
                                     color="deep-purple"
                                     label="Nomor Induk Pegawai"
                                     v-model="nip"
+                                    autocomplete="off"
                                 ></v-text-field>
                             </v-col>
                         </v-row>
