@@ -15,11 +15,13 @@
                 </v-btn>
             </v-toolbar>
 
-            <v-container grid-list-xs>
-                <v-layout wrap>
-                    <slot></slot>
-                </v-layout>
-            </v-container>
+            <slot>
+                <v-card-text :class="dynContent">
+                    <v-container grid-list-xs>
+                        <slot name="content"></slot>
+                    </v-container>
+                </v-card-text>
+            </slot>
         </v-card>
 
         <v-card flat :class="`${$root.theme} lighten-5`" v-else>
@@ -32,11 +34,13 @@
             <v-layout row pb-2>
                 <v-flex :xs8="!small" :offset-xs2="!small" :xs6="small" :offset-xs3="small">
                     <v-widget form style="margin-top: -56px !important;">
-                        <v-container class="px-0 pb-0 pt-2" grid-list-lg>
-                            <v-layout wrap>
-                                <slot></slot>
-                            </v-layout>
-                        </v-container>
+                        <slot>
+                            <v-card-text :class="dynContent">
+                                <v-container class="px-0 pb-0 pt-2" grid-list-lg>
+                                    <slot name="content"></slot>
+                                </v-container>
+                            </v-card-text>
+                        </slot>
 
                         <v-card-actions slot="actions">
                             <v-spacer></v-spacer>
@@ -75,6 +79,10 @@ export default {
 
     computed: {
         ...mapState(['form', 'page']),
+
+        dynContent: function() {
+            return ( this.table ? 'px-4 pb-1 pt-0' : 'px-4');
+        },
 
         transition: function() {
             if (this.$vuetify.breakpoint.xsOnly) {

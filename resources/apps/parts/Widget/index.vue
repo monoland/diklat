@@ -16,10 +16,12 @@
                 <span class="d-block f-nunito caption font-weight-regular text-uppercase white--text">{{ subtitle }}</span>
             </slot>
         </v-sheet>
-
-        <v-card-text :class="dynContent">
-            <slot></slot>
-        </v-card-text>
+        
+        <slot>
+            <v-card-text :class="dynContent">
+                <slot name="content"></slot>
+            </v-card-text>
+        </slot>
 
         <slot name="actions"></slot>
     </v-card>
@@ -35,11 +37,11 @@ export default {
         ...mapState(['page']),
 
         dynClass: function() {
-            return ( this.table ? 'px-4 pb-3' : 'px-6');
+            return ( this.table ? 'px-4 pb-3' : 'px-4');
         },
 
         dynContent: function() {
-            return ( this.table ? 'px-4 pb-1 pt-0' : 'px-6');
+            return ( this.table ? 'px-4 pb-1 pt-0' : 'px-4');
         },
 
         dynWidth: function() {

@@ -2762,6 +2762,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'page-landing',
   route: [{
@@ -3477,6 +3481,313 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['pageInfo', 'initStore']))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/index.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/apps/pages/project/Question/index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _apps_mixins_PageMixins__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apps/mixins/PageMixins */ "./resources/apps/mixins/PageMixins.js");
+/* harmony import */ var _questionCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./questionCard */ "./resources/apps/pages/project/Question/questionCard.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'page-question',
+  mixins: [_apps_mixins_PageMixins__WEBPACK_IMPORTED_MODULE_0__["pageMixins"]],
+  route: [{
+    path: 'question',
+    name: 'question',
+    root: 'monoland'
+  }],
+  components: {
+    'question-card': _questionCard__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {// 
+    };
+  },
+  created: function created() {
+    this.tableHeaders([{
+      text: 'Name',
+      value: 'name'
+    }, {
+      text: 'Updated',
+      value: 'updated_at',
+      "class": 'datetime-field'
+    }]);
+    this.pageInfo({
+      icon: 'people',
+      title: 'Question'
+    });
+    this.dataUrl("/api/subject");
+    this.setRecord({
+      id: null,
+      name: 'Judul Segment',
+      describe: null,
+      active: false,
+      questions: []
+    });
+  },
+  methods: {
+    addQuestion: function addQuestion() {
+      this.record.questions.push({
+        id: this.record.questions.length + 1,
+        text: 'Pertanyaan',
+        mode: 'options',
+        items: ['Option1'],
+        indicator: false,
+        active: false
+      });
+    },
+    deleteQuestion: function deleteQuestion(index) {
+      console.log(index); // this.record.questions.splice(index, 1);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/questionCard.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/apps/pages/project/Question/questionCard.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'question-card',
+  props: {
+    index: Number,
+    value: Object
+  },
+  data: function data() {
+    return {
+      types: [{
+        text: 'Jawaban Pendek',
+        value: 'textfield'
+      }, {
+        text: 'Pilihan Ganda',
+        value: 'options'
+      }]
+    };
+  },
+  methods: {
+    addOption: function addOption() {
+      this.value.items.push('Option' + (this.value.items.length + 1));
+    }
+  }
 });
 
 /***/ }),
@@ -5290,6 +5601,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'v-page-form',
@@ -5308,6 +5623,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])(['form', 'page']), {
+    dynContent: function dynContent() {
+      return this.table ? 'px-4 pb-1 pt-0' : 'px-4';
+    },
     transition: function transition() {
       if (this.$vuetify.breakpoint.xsOnly) {
         return 'dialog-move-transition';
@@ -5783,15 +6101,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'v-widget',
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])(['page']), {
     dynClass: function dynClass() {
-      return this.table ? 'px-4 pb-3' : 'px-6';
+      return this.table ? 'px-4 pb-3' : 'px-4';
     },
     dynContent: function dynContent() {
-      return this.table ? 'px-4 pb-1 pt-0' : 'px-6';
+      return this.table ? 'px-4 pb-1 pt-0' : 'px-4';
     },
     dynWidth: function dynWidth() {
       return 'calc(100% - 32px)';
@@ -28303,22 +28623,33 @@ var render = function() {
           _c(
             "v-card",
             {
-              staticClass: "deep-purple lighten-5",
+              staticClass: "cyan lighten-5",
               staticStyle: { "min-height": "calc(100vh - 52px)" },
               attrs: { flat: "" }
             },
             [
               _c(
                 "v-toolbar",
-                {
-                  attrs: {
-                    color: "deep-purple",
-                    dark: "",
-                    extended: "",
-                    flat: ""
-                  }
-                },
-                [_c("v-app-bar-nav-icon")],
+                { attrs: { color: "cyan", dark: "", extended: "", flat: "" } },
+                [
+                  _c("v-app-bar-nav-icon"),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$router.push({ name: "home" })
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("account_circle")])],
+                    1
+                  )
+                ],
                 1
               ),
               _vm._v(" "),
@@ -28364,7 +28695,7 @@ var render = function() {
                             [
                               _c("v-text-field", {
                                 attrs: {
-                                  color: "deep-purple",
+                                  color: "cyan",
                                   label: "Nomor Induk Pegawai",
                                   autocomplete: "off"
                                 },
@@ -28427,7 +28758,7 @@ var render = function() {
                       _c(
                         "v-btn",
                         {
-                          attrs: { color: "deep-purple", text: "" },
+                          attrs: { color: "cyan", text: "" },
                           on: { click: _vm.openForm }
                         },
                         [_vm._v("selanjutnya")]
@@ -28447,7 +28778,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-footer",
-        { staticClass: "deep-purple lighten-4" },
+        { staticClass: "cyan lighten-4" },
         [
           _c(
             "v-col",
@@ -30366,6 +30697,548 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/index.vue?vue&type=template&id=66ea845f&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/apps/pages/project/Question/index.vue?vue&type=template&id=66ea845f& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-page-wrap",
+    { attrs: { crud: "", absolute: "", searchable: "", "with-progress": "" } },
+    [
+      _vm.desktop
+        ? _c("v-desktop-table", { attrs: { single: "" } })
+        : _c("v-mobile-table", {
+            attrs: { icon: "perm_identity" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(ref) {
+                  var item = ref.item
+                  return [
+                    _c(
+                      "v-list-item-content",
+                      [
+                        _c("v-list-item-title", [_vm._v(_vm._s(item.name))]),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-item-subtitle",
+                          { staticClass: "f-nunito" },
+                          [_vm._v(_vm._s(item.email))]
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                }
+              }
+            ])
+          }),
+      _vm._v(" "),
+      _c("v-page-form", { attrs: { small: "" } }, [
+        _c("div", { staticClass: "questeditor__field" }, [
+          _c(
+            "div",
+            {
+              staticClass: "questeditor__segment questeditor__state--inactive"
+            },
+            [
+              _c("div", { staticClass: "questeditor__cursor" }, [
+                _c("div", { staticClass: "questeditor__cursor--line" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "questeditor__segment--wrap" }, [
+                _c(
+                  "div",
+                  { staticClass: "questeditor__segment--content" },
+                  [
+                    _c(
+                      "v-row",
+                      { attrs: { "no-gutters": "" } },
+                      [
+                        _c(
+                          "v-col",
+                          {
+                            staticClass: "overline pb-0",
+                            attrs: { cols: "12" }
+                          },
+                          [
+                            _c("div", { staticClass: "d-block" }, [
+                              _vm._v("judul segment")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-col",
+                          { attrs: { cols: "12" } },
+                          [
+                            _c("v-textarea", {
+                              staticClass: "headline",
+                              attrs: {
+                                label: "Judul Segment",
+                                rows: "1",
+                                "auto-grow": "",
+                                "single-line": "",
+                                "hide-details": ""
+                              },
+                              model: {
+                                value: _vm.record.name,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.record, "name", $$v)
+                                },
+                                expression: "record.name"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-col",
+                          { attrs: { cols: "12" } },
+                          [
+                            _c("v-textarea", {
+                              staticClass: "describe",
+                              attrs: {
+                                label: "Keterangan",
+                                rows: "1",
+                                "auto-grow": "",
+                                "single-line": "",
+                                "hide-details": ""
+                              },
+                              model: {
+                                value: _vm.record.describe,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.record, "describe", $$v)
+                                },
+                                expression: "record.describe"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-col",
+                          { attrs: { cols: "12" } },
+                          [
+                            _c("v-switch", {
+                              attrs: {
+                                inset: "",
+                                label: "Aktifkan segmen ini",
+                                "hide-details": ""
+                              },
+                              model: {
+                                value: _vm.record.active,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.record, "active", $$v)
+                                },
+                                expression: "record.active"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "questeditor__quests" },
+            [
+              _vm._l(_vm.record.questions, function(item, index) {
+                return _c("question-card", {
+                  key: index,
+                  attrs: { index: index },
+                  on: { delete: _vm.deleteQuestion },
+                  model: {
+                    value: _vm.record.questions[index],
+                    callback: function($$v) {
+                      _vm.$set(_vm.record.questions, index, $$v)
+                    },
+                    expression: "record.questions[index]"
+                  }
+                })
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "questeditor__add" },
+                [
+                  _c(
+                    "v-tooltip",
+                    {
+                      attrs: { right: "" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            return [
+                              _c(
+                                "v-btn",
+                                _vm._g(
+                                  {
+                                    attrs: { icon: "" },
+                                    on: { click: _vm.addQuestion }
+                                  },
+                                  on
+                                ),
+                                [_c("v-icon", [_vm._v("add")])],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [_vm._v(" "), _c("span", [_vm._v("Tambah Pertanyaan")])]
+                  )
+                ],
+                1
+              )
+            ],
+            2
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/questionCard.vue?vue&type=template&id=71a1f019&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/apps/pages/project/Question/questionCard.vue?vue&type=template&id=71a1f019& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "questeditor__card grey lighten-5" }, [
+    _c("div", { staticClass: "d-block" }, [
+      _c(
+        "div",
+        { staticClass: "questeditor__item questeditor__state--inactive" },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "questeditor__content" }, [
+            _c(
+              "div",
+              { staticClass: "questeditor__quest" },
+              [
+                _c(
+                  "v-row",
+                  [
+                    _c(
+                      "v-col",
+                      { staticClass: "overline pb-0", attrs: { cols: "12" } },
+                      [
+                        _c("div", { staticClass: "d-block" }, [
+                          _vm._v("pertanyaan")
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-col",
+                      { attrs: { cols: "8" } },
+                      [
+                        _c("v-textarea", {
+                          staticClass: "title font-weight-regular",
+                          attrs: {
+                            label: "Pertanyaan",
+                            rows: "1",
+                            "auto-grow": "",
+                            "single-line": "",
+                            "hide-details": ""
+                          },
+                          model: {
+                            value: _vm.value.text,
+                            callback: function($$v) {
+                              _vm.$set(_vm.value, "text", $$v)
+                            },
+                            expression: "value.text"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-col",
+                      {
+                        staticStyle: { "align-self": "flex-end" },
+                        attrs: { cols: "4", id: "dropdown" }
+                      },
+                      [
+                        _c("v-overflow-btn", {
+                          staticStyle: { "margin-top": "7px" },
+                          attrs: {
+                            items: _vm.types,
+                            label: "Pilih Jenis",
+                            target: "#dropdown",
+                            "hide-details": ""
+                          },
+                          model: {
+                            value: _vm.value.mode,
+                            callback: function($$v) {
+                              _vm.$set(_vm.value, "mode", $$v)
+                            },
+                            expression: "value.mode"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "questeditor__answer" },
+              [
+                _c(
+                  "v-row",
+                  [
+                    _vm.value.mode === "options"
+                      ? [
+                          _vm._l(_vm.value.items, function(item, index) {
+                            return _c(
+                              "v-col",
+                              { key: index, attrs: { cols: "12" } },
+                              [
+                                _c("v-text-field", {
+                                  attrs: {
+                                    "append-outer-icon": "close",
+                                    "prepend-icon": "radio_button_unchecked",
+                                    label: "Option 1",
+                                    "single-line": "",
+                                    "hide-details": ""
+                                  },
+                                  model: {
+                                    value: _vm.value.items[index],
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.value.items, index, $$v)
+                                    },
+                                    expression: "value.items[index]"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "12" } },
+                            [
+                              _c(
+                                "v-input",
+                                {
+                                  staticClass: "mt-4",
+                                  attrs: {
+                                    "prepend-icon": "radio_button_unchecked",
+                                    "single-line": "",
+                                    "hide-details": ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "subtitle-2 font-weight-regular mt-1"
+                                    },
+                                    [
+                                      _c(
+                                        "a",
+                                        { on: { click: _vm.addOption } },
+                                        [_vm._v("Tambah Opsi")]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      : [
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "8" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Text Jawaban Pendek",
+                                  disabled: ""
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-col", { attrs: { cols: "4" } })
+                        ]
+                  ],
+                  2
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "questeditor__action" },
+              [
+                _c("v-divider"),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "d-flex align-center py-3 pr-4" },
+                  [
+                    _c("v-spacer"),
+                    _vm._v(" "),
+                    _c(
+                      "v-tooltip",
+                      {
+                        attrs: { bottom: "" },
+                        scopedSlots: _vm._u([
+                          {
+                            key: "activator",
+                            fn: function(ref) {
+                              var on = ref.on
+                              return [
+                                _c(
+                                  "v-btn",
+                                  _vm._g(
+                                    {
+                                      attrs: { icon: "" },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$emit("delete", _vm.index)
+                                        }
+                                      }
+                                    },
+                                    on
+                                  ),
+                                  [_c("v-icon", [_vm._v("delete")])],
+                                  1
+                                )
+                              ]
+                            }
+                          }
+                        ])
+                      },
+                      [_vm._v(" "), _c("span", [_vm._v("Hapus Pertanyaan")])]
+                    ),
+                    _vm._v(" "),
+                    _c("v-divider", {
+                      staticClass: "ml-2 mr-5",
+                      attrs: { vertical: "" }
+                    }),
+                    _vm._v(" "),
+                    _c("v-switch", {
+                      staticClass: "ma-0 pa-0 font-weight-bold",
+                      attrs: {
+                        inset: "",
+                        label: "Aktifkan",
+                        "hide-details": ""
+                      },
+                      model: {
+                        value: _vm.value.active,
+                        callback: function($$v) {
+                          _vm.$set(_vm.value, "active", $$v)
+                        },
+                        expression: "value.active"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("v-divider", {
+                      staticClass: "ml-4 mr-5",
+                      attrs: { vertical: "" }
+                    }),
+                    _vm._v(" "),
+                    _c("v-switch", {
+                      staticClass: "ma-0 pa-0 font-weight-bold",
+                      attrs: {
+                        inset: "",
+                        label: "Identifikasi",
+                        "hide-details": ""
+                      },
+                      model: {
+                        value: _vm.value.indicator,
+                        callback: function($$v) {
+                          _vm.$set(_vm.value, "indicator", $$v)
+                        },
+                        expression: "value.indicator"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "questeditor__cursor" }, [
+      _c("div", { staticClass: "questeditor__cursor--line" })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/parts/AppsMenu/index.vue?vue&type=template&id=c5958b50&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/apps/parts/AppsMenu/index.vue?vue&type=template&id=c5958b50& ***!
@@ -31934,21 +32807,23 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c(
-                "v-container",
-                { attrs: { "grid-list-xs": "" } },
-                [
-                  _c(
-                    "v-layout",
-                    { attrs: { wrap: "" } },
-                    [_vm._t("default")],
-                    2
-                  )
-                ],
-                1
-              )
+              _vm._t("default", [
+                _c(
+                  "v-card-text",
+                  { class: _vm.dynContent },
+                  [
+                    _c(
+                      "v-container",
+                      { attrs: { "grid-list-xs": "" } },
+                      [_vm._t("content")],
+                      2
+                    )
+                  ],
+                  1
+                )
+              ])
             ],
-            1
+            2
           )
         : _c(
             "v-card",
@@ -31996,22 +32871,24 @@ var render = function() {
                           attrs: { form: "" }
                         },
                         [
-                          _c(
-                            "v-container",
-                            {
-                              staticClass: "px-0 pb-0 pt-2",
-                              attrs: { "grid-list-lg": "" }
-                            },
-                            [
-                              _c(
-                                "v-layout",
-                                { attrs: { wrap: "" } },
-                                [_vm._t("default")],
-                                2
-                              )
-                            ],
-                            1
-                          ),
+                          _vm._t("default", [
+                            _c(
+                              "v-card-text",
+                              { class: _vm.dynContent },
+                              [
+                                _c(
+                                  "v-container",
+                                  {
+                                    staticClass: "px-0 pb-0 pt-2",
+                                    attrs: { "grid-list-lg": "" }
+                                  },
+                                  [_vm._t("content")],
+                                  2
+                                )
+                              ],
+                              1
+                            )
+                          ]),
                           _vm._v(" "),
                           _c(
                             "v-card-actions",
@@ -32040,7 +32917,7 @@ var render = function() {
                             1
                           )
                         ],
-                        1
+                        2
                       )
                     ],
                     1
@@ -32792,7 +33669,9 @@ var render = function() {
         2
       ),
       _vm._v(" "),
-      _c("v-card-text", { class: _vm.dynContent }, [_vm._t("default")], 2),
+      _vm._t("default", [
+        _c("v-card-text", { class: _vm.dynContent }, [_vm._t("content")], 2)
+      ]),
       _vm._v(" "),
       _vm._t("actions")
     ],
@@ -34317,17 +35196,159 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/apps/pages/project/Question/index.vue":
+/*!*********************************************************!*\
+  !*** ./resources/apps/pages/project/Question/index.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_vue_vue_type_template_id_66ea845f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=66ea845f& */ "./resources/apps/pages/project/Question/index.vue?vue&type=template&id=66ea845f&");
+/* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/apps/pages/project/Question/index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _index_vue_vue_type_template_id_66ea845f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _index_vue_vue_type_template_id_66ea845f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/apps/pages/project/Question/index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/apps/pages/project/Question/index.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/apps/pages/project/Question/index.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/apps/pages/project/Question/index.vue?vue&type=template&id=66ea845f&":
+/*!****************************************************************************************!*\
+  !*** ./resources/apps/pages/project/Question/index.vue?vue&type=template&id=66ea845f& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_66ea845f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index.vue?vue&type=template&id=66ea845f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/index.vue?vue&type=template&id=66ea845f&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_66ea845f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_66ea845f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/apps/pages/project/Question/questionCard.vue":
+/*!****************************************************************!*\
+  !*** ./resources/apps/pages/project/Question/questionCard.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _questionCard_vue_vue_type_template_id_71a1f019___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./questionCard.vue?vue&type=template&id=71a1f019& */ "./resources/apps/pages/project/Question/questionCard.vue?vue&type=template&id=71a1f019&");
+/* harmony import */ var _questionCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./questionCard.vue?vue&type=script&lang=js& */ "./resources/apps/pages/project/Question/questionCard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _questionCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _questionCard_vue_vue_type_template_id_71a1f019___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _questionCard_vue_vue_type_template_id_71a1f019___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/apps/pages/project/Question/questionCard.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/apps/pages/project/Question/questionCard.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/apps/pages/project/Question/questionCard.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_questionCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./questionCard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/questionCard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_questionCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/apps/pages/project/Question/questionCard.vue?vue&type=template&id=71a1f019&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/apps/pages/project/Question/questionCard.vue?vue&type=template&id=71a1f019& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_questionCard_vue_vue_type_template_id_71a1f019___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./questionCard.vue?vue&type=template&id=71a1f019& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/apps/pages/project/Question/questionCard.vue?vue&type=template&id=71a1f019&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_questionCard_vue_vue_type_template_id_71a1f019___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_questionCard_vue_vue_type_template_id_71a1f019___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/apps/pages/project/index.js":
 /*!***********************************************!*\
   !*** ./resources/apps/pages/project/index.js ***!
   \***********************************************/
-/*! exports provided: Home */
+/*! exports provided: Home, Question */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home */ "./resources/apps/pages/project/Home/index.vue");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Home", function() { return _Home__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _Question__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Question */ "./resources/apps/pages/project/Question/index.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Question", function() { return _Question__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
 
 
 

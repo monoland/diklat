@@ -1,9 +1,13 @@
 <template>
     <v-app v-cloak>
         <v-content>
-            <v-card class="deep-purple lighten-5" flat style="min-height: calc(100vh - 52px);">
-                <v-toolbar color="deep-purple" dark extended flat>
+            <v-card class="cyan lighten-5" flat style="min-height: calc(100vh - 52px);">
+                <v-toolbar color="cyan" dark extended flat>
                     <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                    <v-spacer></v-spacer>
+                    <v-btn icon @click="$router.push({ name: 'home' })">
+                        <v-icon>account_circle</v-icon>
+                    </v-btn>
                 </v-toolbar>
 
                 <v-card class="mx-auto" max-width="700" style="margin-top: -64px;">
@@ -16,7 +20,7 @@
                         <v-row>
                             <v-col cols="12">
                                 <v-text-field
-                                    color="deep-purple"
+                                    color="cyan"
                                     label="Nomor Induk Pegawai"
                                     v-model="nip"
                                     autocomplete="off"
@@ -34,13 +38,13 @@
 
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="deep-purple" text @click="openForm">selanjutnya</v-btn>
+                        <v-btn color="cyan" text @click="openForm">selanjutnya</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-card>
         </v-content>
 
-        <v-footer class="deep-purple lighten-4">
+        <v-footer class="cyan lighten-4">
             <v-col class="text-center overline" cols="12">
                 <span>BADAN PENGEMBANGAN SUMBER DAYA MANUSIA DAERAH - KABUPATEN TANGERANG &copy; 2019</span>
             </v-col>

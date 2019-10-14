@@ -78,7 +78,7 @@ class WebController extends Controller
                         ['type' => 'item', 'icon' => 'dashboard', 'text' => 'Beranda', 'to' => ['name' => 'home']],
                         // master
                         ['type' => 'subheader', 'text' => 'Master', 'class' => 'mt-2'],
-                        ['type' => 'item', 'icon' => 'filter_none', 'text' => 'Dokumen', 'to' => ['name' => 'document']],
+                        ['type' => 'item', 'icon' => 'filter_none', 'text' => 'Questions', 'to' => ['name' => 'question']],
                         // utilitas
                         ['type' => 'subheader', 'text' => 'Utilitas', 'class' => 'mt-2'],
                         ['type' => 'item', 'icon' => 'people', 'text' => 'Pengguna', 'to' => ['name' => 'user']],

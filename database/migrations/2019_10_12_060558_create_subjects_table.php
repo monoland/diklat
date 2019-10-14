@@ -17,6 +17,7 @@ class CreateSubjectsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->index();
             $table->text('describe')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

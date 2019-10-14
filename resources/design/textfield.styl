@@ -17,3 +17,30 @@
     &--outlined.v-input--is-focused fieldset, 
     &--outlined.v-input--has-state fieldset
         border-width: 0.5px
+
+.v-textarea
+    &.describe,
+    &.headline,
+    &.title
+        textarea
+            line-height: 1.2
+    
+    &.describe.v-input,
+    &.headline.v-input,
+    &.title.v-input
+        .v-label
+            height: auto
+            line-height: 1.2
+            top: 7px
+    
+    &.headline.v-input
+        .v-label
+            font-size: 1.5rem
+
+    &.describe.v-input
+        .v-label
+            font-size: 14px
+
+    &.title.v-input
+        .v-label
+            font-size: 20px

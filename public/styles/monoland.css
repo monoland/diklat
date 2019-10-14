@@ -25014,6 +25014,9 @@ html {
 .v-application--is-ltr .v-list-item__avatar:first-child {
   margin-right: 16px;
 }
+.v-application--is-ltr .questeditor__answer .v-input__append-outer {
+  margin-left: 24px;
+}
 .v-application .v-background__auth::before {
   background: rgba(99,99,99,0.18);
   position: absolute;
@@ -25028,6 +25031,9 @@ html {
 .v-application .v-background__auth > .v-responsive__content {
   position: relative;
   z-index: 1;
+}
+.v-application .describe {
+  font-size: 14px;
 }
 .v-content__wrap {
   z-index: 1;
@@ -25155,8 +25161,64 @@ html {
   display: block;
   width: 32px;
 }
+.questeditor {
+  position: relative;
+}
+.questeditor__quests {
+  position: relative;
+  min-height: 60px;
+}
+.questeditor__cursor {
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  padding-right: 12px;
+  width: 3px;
+}
+.questeditor__segment {
+  position: relative;
+}
+.questeditor__segment--wrap {
+  padding: 16px 0;
+}
+.questeditor__segment--content {
+  padding: 0 16px;
+}
+.questeditor__action {
+  padding-left: 16px;
+}
+.questeditor__card + .questeditor__card {
+  margin-top: 6px;
+}
+.questeditor__content {
+  position: relative;
+}
+.questeditor__quest {
+  padding: 0 16px;
+}
+.questeditor__answer {
+  padding: 0 16px 24px;
+}
+.questeditor__answer .row .col-12,
+.questeditor__answer .row .col-8,
+.questeditor__answer .row .col-4 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.questeditor__item {
+  position: relative;
+}
+.questeditor__add {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  height: 60px;
+}
 .v-sheet--offset {
-  margin-top: -16px;
+  margin-top: -20px;
 }
 .v-text-field > .v-input__control > .v-input__slot:before {
   border-color: rgba(0,0,0,0.18) !important;
@@ -25174,6 +25236,27 @@ html {
 .v-text-field--outlined.v-input--is-focused fieldset,
 .v-text-field--outlined.v-input--has-state fieldset {
   border-width: 0.5px;
+}
+.v-textarea.describe textarea,
+.v-textarea.headline textarea,
+.v-textarea.title textarea {
+  line-height: 1.2;
+}
+.v-textarea.describe.v-input .v-label,
+.v-textarea.headline.v-input .v-label,
+.v-textarea.title.v-input .v-label {
+  height: auto;
+  line-height: 1.2;
+  top: 7px;
+}
+.v-textarea.headline.v-input .v-label {
+  font-size: 1.5rem;
+}
+.v-textarea.describe.v-input .v-label {
+  font-size: 14px;
+}
+.v-textarea.title.v-input .v-label {
+  font-size: 20px;
 }
 .v-toolbar.v-toolbar--flat:not(.no-shadow):after {
   bottom: -1px;

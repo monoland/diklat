@@ -1,0 +1,55 @@
+.questeditor
+    position: relative
+
+    &__quests
+        position: relative
+        min-height: 60px
+
+    &__cursor
+        display: flex
+        height: 100%
+        left: 0
+        position: absolute
+        padding-right: 12px 
+        width: 3px
+
+    &__segment
+        position: relative
+
+        &--wrap
+            padding: 16px 0
+
+        &--content
+            padding: 0 16px
+    
+    &__action
+        padding-left: 16px
+    
+    &__card + &__card
+        margin-top: 6px
+    
+    &__content
+        position: relative
+    
+    &__quest
+        padding: 0 16px
+
+    &__answer
+        padding: 0 16px 24px
+
+        .row .col-12,
+        .row .col-8,
+        .row .col-4
+            padding-top: 0
+            padding-bottom: 0
+
+    &__item
+        position: relative
+    
+    &__add
+        display: flex
+        align-items: center
+        position: absolute
+        bottom: 0
+        left: 16px
+        height: 60px

@@ -16,10 +16,10 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('text')->index();
-            $table->enum('type', ['indicator', 'requirement'])->default('indicator');
-            $table->enum('mode', ['text', 'option'])->default('text');
-            $table->jsonb('item')->nullable();
+            $table->enum('mode', ['textfield', 'options'])->default('text');
+            $table->jsonb('items')->nullable();
             $table->smallInteger('depth')->default(1);
+            $table->boolean('indicator')->default(false);
             $table->boolean('active')->default(true);
             $table->unsignedBigInteger('subject_id')->index();
             $table->timestamps();

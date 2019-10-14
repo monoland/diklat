@@ -25,4 +25,6 @@ Route::middleware(['api', 'auth:api'])->group(function () {
     Route::resource('document', 'Mono\DocumentController')->only(['index', 'update', 'destroy']);
 
     // application
+    Route::resource('subject', 'Apps\SubjectController')->only(['index', 'store', 'update', 'destroy']);
+    Route::resource('question', 'Apps\QuestionController')->only(['index', 'store', 'update', 'destroy']);
 });
